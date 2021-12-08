@@ -19,13 +19,10 @@ public class Network{
                 type=scStr.next();
                 devices.add(new Device(name,type,router));
         }
+       
         for (int i=0;i<noDev;i++){
             devices.get(i).start();
-            /*try {
-                devices.get(i).sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }*/
+           
         }
     }
 
