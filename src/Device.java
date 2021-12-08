@@ -35,6 +35,7 @@ class Device extends Thread{
     public Router getRouter() {return router;}
 
     public void connect() throws InterruptedException {
+
         thisConn=router.occupy();
         //System.out.println("this connection is: "+thisConn);
         if (router.elements.value>=0){
@@ -43,9 +44,7 @@ class Device extends Thread{
             this.performOnlineActivity();
         }else {
             System.out.println("("+name+")"+"("+type+")"+"arrived and waiting");
-            while (router.elements.value>=0){
-                System.out.println("hii");
-            };
+            thisConn=router.occupy();
             System.out.println(thisConn+": "+name+" Occupied");
             this.performOnlineActivity();
         }
