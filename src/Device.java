@@ -21,12 +21,9 @@ class Device extends Thread {
         return type;
     }
 
-
     public void setType(String type) {
         this.type = type;
     }
-
-
 
     public Router getRouter() {
         return router;
@@ -35,8 +32,6 @@ class Device extends Thread {
     public void setRouter(Router router) {
         this.router = router;
     }
-    
-
 
     public String getThisConn() {
         return thisConn;
@@ -44,12 +39,13 @@ class Device extends Thread {
     public void setThisConn(String thisConn) {
         this.thisConn = thisConn;
     }
+
+
     public void connect() throws InterruptedException {
         thisConn = router.getConnectionPlace(this);
         this.router.occupy(this);
 
     }
-    
     
     public void performOnlineActivity() throws InterruptedException {
         System.out.println(thisConn + ": " + name + " performs online activity");

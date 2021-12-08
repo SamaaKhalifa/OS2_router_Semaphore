@@ -7,8 +7,8 @@ class Semaphore {
     public void setValue(int value){
         this.value=value;
     }
+    
     public synchronized void P(Device device) throws InterruptedException {
-
       // System.out.println("in P "+value);
         value--;
         if(value<0){
@@ -18,9 +18,6 @@ class Semaphore {
         }else{
             System.out.println("(" + device.getdeviceName() + ")" + "(" + device.getType() + ")" + "arrived");
         }
-       
-      
-        
             
     }
 
