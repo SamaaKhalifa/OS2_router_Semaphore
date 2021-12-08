@@ -26,11 +26,12 @@ public class Router {
 
     public String occupy(){
         String value;
-        elements.P();
+        elements.P();//wait
         value=connections.get(outptr);
+        //connections.remove(outptr);
         outptr=(outptr+1)%NumOfConnections;
         // occupy
-        spaces.V();
+        spaces.V();//notify
         return value;
     }
     public void release(String value){
