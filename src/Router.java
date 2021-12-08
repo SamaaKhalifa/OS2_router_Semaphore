@@ -33,6 +33,7 @@ public class Router {
     public void occupy(Device device) throws InterruptedException {
         this.semaphore.P(device);
         System.out.println(device.getThisConn() +": "+ device.getdeviceName() +" Occupied");
+
     }
 
     public void release(Device device) {

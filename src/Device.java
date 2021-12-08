@@ -42,8 +42,11 @@ class Device extends Thread {
 
 
     public void connect() throws InterruptedException {
+
         thisConn = router.getConnectionPlace(this);
         this.router.occupy(this);
+
+        }
 
     }
     
