@@ -14,7 +14,7 @@ public class GUI extends JFrame {
     private JTextField noOfDevices;
     public GUI() {
 
-            this.setBounds(100, 100, 1000, 750);
+            this.setBounds(100, 100, 1000, 800);
             this.getContentPane().setBackground(Color.PINK);
             this.setLocationRelativeTo(null);
             this.getContentPane().setLayout(null);
@@ -36,6 +36,14 @@ public class GUI extends JFrame {
             b1.setFont(new Font("Montserrat", Font.PLAIN, 20));
             this.getContentPane().add(b1);
             b1.requestFocus();
+
+            JButton b2 = new JButton("Stop");
+            b2.setBounds(320, 580, 400, 50);
+            b2.setBackground(new Color(	231, 84, 128));
+            b2.setForeground(Color.white);
+            b2.setFont(new Font("Montserrat", Font.PLAIN, 20));
+            this.getContentPane().add(b2);
+            b2.requestFocus();
 
             JLabel Connections = new JLabel("What is the number of WI-FI Connections?");
             Connections.setFont(new Font("Roboto", Font.PLAIN, 20));
@@ -67,19 +75,26 @@ public class GUI extends JFrame {
             noOfDevices.setVisible(true);
             noOfDevices.requestFocus();
 
+            JTextArea NamesTextArea = new JTextArea();
+            NamesTextArea.setFont(new Font("Monospaced", Font.PLAIN, 20));
+            NamesTextArea.setBounds(530, 293, 100, 225);
+            NamesTextArea.setRows(100);
+            this.getContentPane().add(NamesTextArea);
+            NamesTextArea.requestFocus();
+
             JTextArea TypesTextArea = new JTextArea();
             TypesTextArea.setFont(new Font("Monospaced", Font.PLAIN, 20));
-            TypesTextArea.setBounds(530, 293, 100, 225);
+            TypesTextArea.setBounds(700, 293, 100, 225);
             TypesTextArea.setRows(100);
             this.getContentPane().add(TypesTextArea);
             TypesTextArea.requestFocus();
 
-            JTextArea NamesTextArea = new JTextArea();
-            NamesTextArea.setFont(new Font("Monospaced", Font.PLAIN, 20));
-            NamesTextArea.setBounds(700, 293, 100, 225);
-            NamesTextArea.setRows(100);
-            this.getContentPane().add(NamesTextArea);
-            NamesTextArea.requestFocus();
+            b2.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    System.exit(0);
+                }
+            });
 
             b1.addActionListener(new ActionListener() {
                 @Override

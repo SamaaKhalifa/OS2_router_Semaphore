@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Router {
@@ -30,8 +31,9 @@ public class Router {
         return connectionPlace;
     }
 
-    public void occupy(Device device) throws InterruptedException {
+    public void occupy(Device device) throws InterruptedException, IOException {
         this.semaphore.P(device);
+        SingleFile file =new SingleFile(device.getThisConn() +": "+ device.getdeviceName() +" Occupied");
         System.out.println(device.getThisConn() +": "+ device.getdeviceName() +" Occupied");
 
     }
