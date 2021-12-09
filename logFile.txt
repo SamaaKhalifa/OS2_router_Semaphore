@@ -1,8 +1,8 @@
-(c)(d)arrived
-connection1: c Occupied
-(e)(f)arrived and waiting
-connection1: c performs online activity
-connection1: c Logged out
-connection1: e Occupied
-connection1: e performs online activity
-connection1: e Logged out
+(2)(e)arrived
+connection1: 2 Occupied
+(3)(v)arrived and waiting
+connection1: 2 performs online activity
+connection1: 2 Logged out
+connection1: 3 Occupied
+connection1: 3 performs online activity
+connection1: 3 Logged out
