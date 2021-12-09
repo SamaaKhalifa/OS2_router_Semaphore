@@ -44,7 +44,13 @@ class Device extends Thread{
             this.performOnlineActivity();
         }else {
             System.out.println("("+name+")"+"("+type+")"+"arrived and waiting");
+
             thisConn=router.occupy();
+
+            while (router.elements.value>=0){
+                System.out.println("hi");
+            };
+
             System.out.println(thisConn+": "+name+" Occupied");
             this.performOnlineActivity();
         }

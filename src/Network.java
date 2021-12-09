@@ -1,11 +1,13 @@
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.*;
 
 public class Network{
     
     
     public static void main(String[]args){
-        ArrayList<Device> devices = new ArrayList<Device>();
+        /*ArrayList<Device> devices = new ArrayList<Device>();
         System.out.println("What is the number of WI-FI Connections?");
         Scanner sc= new Scanner(System.in);
         int noCon=sc.nextInt();
@@ -21,12 +23,10 @@ public class Network{
         }
         for (int i=0;i<noDev;i++){
             devices.get(i).start();
-            /*try {
-                devices.get(i).sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }*/
-        }
+
+        }*/
+        GUI gui =new GUI();
+
     }
 
 }

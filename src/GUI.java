@@ -1,11 +1,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.InputMethodEvent;
-import java.io.File;
 import java.util.ArrayList;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -88,8 +84,8 @@ public class GUI extends JFrame {
             b1.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String[] names = NamesTextArea.getText().split("\s");
-                    String[] types = TypesTextArea.getText().split("\s");
+                    String[] names = NamesTextArea.getText().split("\n");
+                    String[] types = TypesTextArea.getText().split("\n");
                     ArrayList<Device> devices = new ArrayList<Device>();
                     Router router=new Router(Integer.parseInt(noOfConnections.getText()));
                     for (int i = 0; i < Integer.parseInt(noOfDevices.getText()); i++) {
