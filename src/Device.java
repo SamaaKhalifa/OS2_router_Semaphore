@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Random;
 
 
@@ -6,6 +7,7 @@ class Device extends Thread {
     private String type;
     private Router router;
     private String thisConn;
+
     Random random = new Random();
 
     public Device(String name, String type, Router router) {
@@ -41,21 +43,23 @@ class Device extends Thread {
     }
 
 
-    public void connect() throws InterruptedException {
+    public void connect() throws InterruptedException, IOException {
 
 
         thisConn = router.getConnectionPlace(this);
         this.router.occupy(this);
         }
 
-    }
+
     
-    public void performOnlineActivity() throws InterruptedException {
+    public void performOnlineActivity() throws InterruptedException, IOException {
+        SingleFile file =new SingleFile(thisConn + ": " + name + " performs online activity");
         System.out.println(thisConn + ": " + name + " performs online activity");
         sleep((random.nextInt(2) + 1) * 1000);
     }
     
-    public void logout() {
+    public void logout() throws IOException {
+        SingleFile file =new SingleFile(thisConn + ": " + name + " Logged out");
         System.out.println(thisConn + ": " + name + " Logged out");
         router.release(this);
     }
@@ -68,7 +72,7 @@ class Device extends Thread {
             this.performOnlineActivity();
             this.logout();
             this.interrupt();;
-        } catch (InterruptedException e) {
+        } catch (InterruptedException | IOException e) {
             e.printStackTrace();
         }
     }
