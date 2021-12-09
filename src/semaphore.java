@@ -1,27 +1,29 @@
-import javax.sound.sampled.SourceDataLine;
 
-class semaphore {
+class Semaphore {
     protected int value;
-    protected semaphore(int initial) {
+    protected Semaphore(int initial) {
         value = initial;
     }
     public void setValue(int value){
         this.value=value;
     }
-    public synchronized void P() {
-      //  System.out.println("in P "+value);
+    
+    public synchronized void P(Device device) throws InterruptedException {
+      // System.out.println("in P "+value);
         value--;
-       // System.out.println("after "+value);
-        if (value < 0)
-            try {
-                wait();
-            } catch (InterruptedException e) {
-            }
+        if(value<0){
+            System.out.println("(" + device.getdeviceName() + ")" + "(" + device.getType()+ ")" + "arrived and waiting");
+
+            wait();
+        }else{
+            System.out.println("(" + device.getdeviceName() + ")" + "(" + device.getType() + ")" + "arrived");
+        }
+            
     }
 
-    public synchronized void V( ) {
+    public synchronized void V( Device device) {
         value++;
-        //System.out.println( );
+        
         if (value <= 0)
             notify();
     }
