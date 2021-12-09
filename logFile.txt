@@ -1,0 +1,8 @@
+(c)(d)arrived
+connection1: c Occupied
+(e)(f)arrived and waiting
+connection1: c performs online activity
+connection1: c Logged out
+connection1: e Occupied
+connection1: e performs online activity
+connection1: e Logged out
